@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:practica_figma/screens/check_out.dart';
+import 'package:practica_figma/screens/home_screen.dart';
+import 'package:practica_figma/screens/productDetail_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,26 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
+      //darkTheme: ThemeData.dark(),
+      routes: {'/': (context) => const HomeScreen()},
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Material App Bar')),
-        body: Row(
-          children: [
-            const Center(
-              child: Text(
-                'Texto de Prueba',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Encode',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-
-            Center(child: Image.asset('assets/images/p3.png')),
-          ],
-        ),
-      ),
     );
   }
 }
