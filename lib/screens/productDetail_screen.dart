@@ -133,6 +133,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff121111),
+                                fontFamily: 'Encode',
                               ),
                             ),
                             const SizedBox(height: 4),
@@ -146,6 +147,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Color(0xff787676),
+                                    fontFamily: 'Encode',
                                   ),
                                 ),
                                 const SizedBox(width: 4),
@@ -155,6 +157,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Color(0xff347EFB),
+                                    fontFamily: 'Encode',
                                   ),
                                 ),
                               ],
@@ -178,6 +181,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
+                                  fontFamily: 'Encode',
                                 ),
                               ),
                             ),
@@ -203,13 +207,17 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               text:
                                   'Its simple and elegant shape makes it perfect for those of you who like you who want minimalist clothes.',
 
-                              style: TextStyle(color: Color(0xff787676)),
+                              style: TextStyle(
+                                color: Color(0xff787676),
+                                fontFamily: 'Encode',
+                              ),
                             ),
                             TextSpan(
                               text: ' Read More...',
                               style: TextStyle(
                                 color: Color(0xff121111),
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Encode',
                               ),
                             ),
                           ],
@@ -235,6 +243,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Encode',
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -281,6 +290,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                                   )
                                                   : Color(0xff292526),
                                           fontSize: 14,
+                                          fontFamily: 'Encode',
                                         ),
                                       ),
                                     ),
@@ -300,6 +310,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Encode',
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -374,6 +385,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       style: TextStyle(
                         color: Color(0xffFDFDFD),
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'Encode',
                       ),
                     ),
                     TextSpan(
@@ -381,6 +393,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       style: TextStyle(
                         color: Color(0xffFDFDFD),
                         fontSize: 10,
+                        fontFamily: 'Encode',
                         decoration: TextDecoration.lineThrough,
                       ),
                     ),
