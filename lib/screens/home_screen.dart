@@ -14,12 +14,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Scaffold(
-        extendBody: true,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        body: CustomScrollView(
+    return Scaffold(
+      extendBody: true,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      body: Padding(
+        padding: EdgeInsets.only(top: 68, right: 24, left: 24, bottom: 24),
+        child: CustomScrollView(
+          physics: ClampingScrollPhysics(),
           slivers: [
             //Presentación del Cliente
             const SliverToBoxAdapter(
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          'Albert Stevano',
+                          'Cristian Quintana',
                           style: TextStyle(
                             color: Color(0xFF121111),
                             fontSize: 16,
@@ -108,23 +109,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      foregroundColor: Colors.transparent,
-                      padding: EdgeInsets.symmetric(
-                        vertical: 24,
-                        horizontal: 12,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      backgroundColor: const Color(0xFF292526),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color.fromARGB(50, 49, 49, 49),
+                          blurRadius: 5,
+                          spreadRadius: 3,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
-                    child: SvgPicture.asset(
-                      'assets/svg/filter.svg',
-                      color: Color.fromARGB(255, 255, 255, 255),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        foregroundColor: Colors.transparent,
+                        padding: EdgeInsets.all(12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        backgroundColor: const Color(0xFF292526),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/svg/filter.svg',
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
                 ],
@@ -134,14 +145,15 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(child: SizedBox(height: 32)),
             //Categorias
             SliverToBoxAdapter(child: ItemCategory()),
-            //Separador
-            SliverToBoxAdapter(child: SizedBox(height: 24)),
             //Productos
             SliverToBoxAdapter(child: ProductGrid()),
           ],
         ),
-        //Barra De Navegacion
-        bottomNavigationBar: Container(
+      ),
+      //Barra De Navegacion
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(bottom: 5, left: 24, right: 24),
+        child: Container(
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 255, 255, 255),
             borderRadius: BorderRadius.only(

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
       //darkTheme: ThemeData.dark(),
-      routes: {'/': (context) => const HomeScreen()},
+      routes: {'/': (context) => const ProductDetailPage()},
       title: 'Material App',
     );
   }

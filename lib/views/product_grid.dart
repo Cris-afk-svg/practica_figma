@@ -47,7 +47,7 @@ class _ProductGridState extends State<ProductGrid> {
       itemCount: itemCount,
       itemBuilder: (context, index) {
         // Para variar la altura de la imagen
-        double height = (index % 4 == 0 || index % 4 == 3) ? 258 : 320;
+        double height = (index % 4 == 0 || index % 4 == 3) ? 288 : 320;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
