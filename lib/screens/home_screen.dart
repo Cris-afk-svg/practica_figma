@@ -68,77 +68,90 @@ class _HomeScreenState extends State<HomeScreen> {
             //Separador
             SliverToBoxAdapter(child: SizedBox(height: 16)),
             //Buscador y Filtro
-            SliverToBoxAdapter(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: TextField(
-                      cursorColor: const Color.fromARGB(255, 8, 8, 8),
-                      decoration: InputDecoration(
-                        hintText: 'Search clothes...',
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 14,
-                        ), //Change this value to custom as you like
-                        isDense: true,
-                        hintStyle: const TextStyle(
-                          color: Color(0xFFCAC9C9),
-                          fontFamily: 'Encode',
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14,
+            SliverAppBar(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+
+              elevation: 0,
+              floating: true,
+              scrolledUnderElevation: 0, // Evita que tome color al reaparecer
+              flexibleSpace: FlexibleSpaceBar(
+                background: Padding(
+                  padding: EdgeInsets.zero,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          cursorColor: const Color.fromARGB(255, 8, 8, 8),
+                          decoration: InputDecoration(
+                            hintText: 'Search clothes...',
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 14,
+                            ), //Change this value to custom as you like
+                            isDense: true,
+                            hintStyle: const TextStyle(
+                              color: Color(0xFFCAC9C9),
+                              fontFamily: 'Encode',
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14,
+                            ),
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 16,
+                                right: 8,
+                              ),
+                              child: SvgPicture.asset(
+                                'assets/svg/search.svg',
+                                color: Color(0xFFCAC9C9),
+                              ),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Color(0xFFCAC9C9)),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromARGB(255, 114, 114, 114),
+                              ),
+                            ),
+                          ),
                         ),
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.only(left: 16, right: 8),
+                      ),
+                      const SizedBox(width: 16),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color.fromARGB(50, 49, 49, 49),
+                              blurRadius: 5,
+                              spreadRadius: 3,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            foregroundColor: Colors.transparent,
+                            padding: EdgeInsets.all(12),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            backgroundColor: const Color(0xFF292526),
+                          ),
                           child: SvgPicture.asset(
-                            'assets/svg/search.svg',
-                            color: Color(0xFFCAC9C9),
-                          ),
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFCAC9C9)),
-                        ),
-                        focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color.fromARGB(255, 114, 114, 114),
+                            'assets/svg/filter.svg',
+                            color: Color.fromARGB(255, 255, 255, 255),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  const SizedBox(width: 16),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color.fromARGB(50, 49, 49, 49),
-                          blurRadius: 5,
-                          spreadRadius: 3,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        foregroundColor: Colors.transparent,
-                        padding: EdgeInsets.all(12),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        backgroundColor: const Color(0xFF292526),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/svg/filter.svg',
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             //Separador

@@ -32,7 +32,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        scrolledUnderElevation: null,
+        scrolledUnderElevation: 0,
+
         elevation: 0,
         title: const Text(
           'Checkout',
@@ -266,114 +267,112 @@ class _CheckoutPageState extends State<CheckoutPage> {
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: Color(0xffF6F6F6))),
       ),
-      child: Expanded(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Imagen del producto
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
-                    item.image,
-                    width: 70,
-                    height: 70,
-                    fit: BoxFit.cover,
-                    alignment: Alignment(0, -0.84),
-                  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Imagen del producto
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(14),
+                child: Image.asset(
+                  item.image,
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.cover,
+                  alignment: Alignment(0, -0.84),
                 ),
-                const SizedBox(width: 15),
+              ),
+              const SizedBox(width: 15),
 
-                // Título, subtítulo, precio
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          item.title,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Encode',
-                          ),
+              // Título, subtítulo, precio
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        item.title,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Encode',
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          item.subTitle,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Text(
-                          '\$${item.price.toStringAsFixed(2)}',
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Encode',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-
-            // Selector de cantidad
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset(
-                  'assets/svg/menu1.svg',
-                  height: 24,
-                  width: 24,
-                  color: Color(0xff292526),
-                ),
-                SizedBox(height: 29),
-                Row(
-                  children: [
-                    _buildQuantityButton(
-                      icon: 'assets/svg/minus.svg',
-                      onTap: () {
-                        setState(() {
-                          if (item.quantity > 1) {
-                            item.quantity--;
-                          }
-                        });
-                      },
-                    ),
-                    const SizedBox(width: 9),
-                    Text(
-                      '${item.quantity}',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Encode',
                       ),
-                    ),
-                    const SizedBox(width: 9),
+                      const SizedBox(height: 4),
+                      Text(
+                        item.subTitle,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        '\$${item.price.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Encode',
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
 
-                    _buildQuantityButton(
-                      icon: 'assets/svg/add.svg',
-                      onTap: () {
-                        setState(() {
-                          item.quantity++;
-                        });
-                      },
+          // Selector de cantidad
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SvgPicture.asset(
+                'assets/svg/menu1.svg',
+                height: 24,
+                width: 24,
+                color: Color(0xff292526),
+              ),
+              SizedBox(height: 29),
+              Row(
+                children: [
+                  _buildQuantityButton(
+                    icon: 'assets/svg/minus.svg',
+                    onTap: () {
+                      setState(() {
+                        if (item.quantity > 1) {
+                          item.quantity--;
+                        }
+                      });
+                    },
+                  ),
+                  const SizedBox(width: 9),
+                  Text(
+                    '${item.quantity}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Encode',
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+                  ),
+                  const SizedBox(width: 9),
+
+                  _buildQuantityButton(
+                    icon: 'assets/svg/add.svg',
+                    onTap: () {
+                      setState(() {
+                        item.quantity++;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
