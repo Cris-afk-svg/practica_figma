@@ -23,6 +23,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
+
+    final String image = arguments['image'];
+    final String title = arguments['title'];
+    final String price = arguments['price'];
+
     return Scaffold(
       extendBody: true,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -48,7 +54,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.asset(
-                              'assets/images/p2.png',
+                              image,
                               fit: BoxFit.cover,
                               alignment: Alignment(0, -0.44),
                               width: double.infinity,
@@ -102,7 +108,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           color: const Color.fromARGB(255, 255, 255, 255),
                         ),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                           icon: SvgPicture.asset(
                             'assets/svg/arrow-left.svg',
                             width: 24,
@@ -127,8 +135,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Nombre del producto
-                            const Text(
-                              'Light Dress Bless',
+                            Text(
+                              title,
                               style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
@@ -381,7 +389,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Add to Cart | \$162.99',
+                      text: 'Add to Cart | $price',
                       style: TextStyle(
                         color: Color(0xffFDFDFD),
                         fontWeight: FontWeight.bold,

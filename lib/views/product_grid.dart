@@ -53,13 +53,26 @@ class _ProductGridState extends State<ProductGrid> {
           children: [
             Stack(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    images[index % images.length],
-                    height: height,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/productDetail',
+                      arguments: {
+                        'image': images[index % images.length],
+                        'title': titles[index % titles.length],
+                        'price': prices[index % prices.length],
+                      },
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      images[index % images.length],
+                      height: height,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 // Icono del corazón con toggle al presionar

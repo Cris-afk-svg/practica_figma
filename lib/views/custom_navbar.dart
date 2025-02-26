@@ -11,7 +11,6 @@ class CustomNavBar extends StatefulWidget {
 class _CustomNavBarState extends State<CustomNavBar> {
   int _selectedIndex = 0;
 
-  // Lista de rutas para tus SVG (puedes ajustar o incluir más datos si lo deseas)
   final List<String> svgAssets = [
     'assets/svg/home.svg',
     'assets/svg/shopping-bag.svg',
@@ -30,6 +29,9 @@ class _CustomNavBarState extends State<CustomNavBar> {
           onTap: () {
             setState(() {
               _selectedIndex = index;
+              if (svgAssets[index] == 'assets/svg/shopping-bag.svg') {
+                Navigator.pushNamed(context, '/checkOut');
+              }
             });
           },
           child: Container(

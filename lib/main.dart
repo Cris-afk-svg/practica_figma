@@ -15,8 +15,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
       //darkTheme: ThemeData.dark(),
-      routes: {'/': (context) => const HomeScreen()},
-      title: 'Material App',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/productDetail': (context) => const ProductDetailPage(),
+        '/checkOut': (context) => const CheckoutPage(),
+      },
+      title: 'Figma Challenge',
     );
   }
 }
