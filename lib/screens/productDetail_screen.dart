@@ -131,46 +131,48 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Nombre del producto
-                            Text(
-                              title,
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff121111),
-                                fontFamily: 'Encode',
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Nombre del producto
+                              Text(
+                                title,
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff121111),
+                                  fontFamily: 'Encode',
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 4),
-                            // Rating y número de reseñas
-                            Row(
-                              children: [
-                                SvgPicture.asset('assets/svg/star.svg'),
-                                const SizedBox(width: 8),
-                                const Text(
-                                  '5.0',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Color(0xff787676),
-                                    fontFamily: 'Encode',
+                              const SizedBox(height: 4),
+                              // Rating y número de reseñas
+                              Row(
+                                children: [
+                                  SvgPicture.asset('assets/svg/star.svg'),
+                                  const SizedBox(width: 8),
+                                  const Text(
+                                    '5.0',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xff787676),
+                                      fontFamily: 'Encode',
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 4),
-                                // Número de reseñas
-                                Text(
-                                  '(7,932 reviews)',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Color(0xff347EFB),
-                                    fontFamily: 'Encode',
+                                  const SizedBox(width: 4),
+                                  // Número de reseñas
+                                  Text(
+                                    '(7,932 reviews)',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xff347EFB),
+                                      fontFamily: 'Encode',
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
 
                         Row(
