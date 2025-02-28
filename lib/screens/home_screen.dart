@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverAppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               automaticallyImplyLeading: false,
+              leading: Container(),
               elevation: 0,
               floating: true,
               scrolledUnderElevation: 0, // Evita que tome color al reaparecer
