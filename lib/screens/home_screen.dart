@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //Buscador y Filtro
             SliverAppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-
+              automaticallyImplyLeading: false,
               elevation: 0,
               floating: true,
               scrolledUnderElevation: 0, // Evita que tome color al reaparecer

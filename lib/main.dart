@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
       //darkTheme: ThemeData.dark(),
       routes: {
